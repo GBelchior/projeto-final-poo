@@ -1,62 +1,67 @@
 package br.belchior.poo.data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.belchior.poo.models.*;
 
-public class DataStorage {
-	private List<Cliente> clientes;
-	private List<Pedido> pedidos;
-	private List<ItemPedido> itensPedido;
-	private List<Categoria> categorias;
-	private List<ProdutoExportacao> produtosExportacao;
-	private List<ProdutoMercadoInterno> produtosMercadoInterno;
+public final class DataStorage {
+	private static List<Cliente> _clientes = new ArrayList<Cliente>();
+	private static List<Pedido> _pedidos = new ArrayList<Pedido>();
+	private static List<ItemPedido> _itensPedido = new ArrayList<ItemPedido>();
+	private static List<Categoria> _categorias = new ArrayList<Categoria>();
+	private static List<ProdutoExportacao> _produtosExportacao = new ArrayList<ProdutoExportacao>();
+	private static List<ProdutoMercadoInterno> _produtosMercadoInterno = new ArrayList<ProdutoMercadoInterno>();
 
-	public List<Cliente> getClientes() {
-		return clientes;
+	private DataStorage() {
+		
+	}
+	
+	public static List<Cliente> getClientes() {
+		return _clientes;
 	}
 
-	public void setClientes(List<Cliente> clientes) {
-		this.clientes = clientes;
+	public static void setClientes(List<Cliente> clientes) {
+		_clientes = clientes;
 	}
 
-	public List<Pedido> getPedidos() {
-		return pedidos;
+	public static List<Pedido> getPedidos() {
+		return _pedidos;
 	}
 
-	public void setPedidos(List<Pedido> pedidos) {
-		this.pedidos = pedidos;
+	public static void setPedidos(List<Pedido> pedidos) {
+		_pedidos = pedidos;
 	}
 
-	public List<ItemPedido> getItensPedido() {
-		return itensPedido;
+	public static List<ItemPedido> getItensPedido() {
+		return _itensPedido;
 	}
 
-	public void setItensPedido(List<ItemPedido> itensPedido) {
-		this.itensPedido = itensPedido;
+	public static void setItensPedido(List<ItemPedido> itensPedido) {
+		_itensPedido = itensPedido;
 	}
 
-	public List<Categoria> getCategorias() {
-		return categorias;
+	public static List<Categoria> getCategorias() {
+		return _categorias;
 	}
 
-	public void setCategorias(List<Categoria> categorias) {
-		this.categorias = categorias;
+	public static void setCategorias(List<Categoria> categorias) {
+		_categorias = categorias;
 	}
 
-	public List<ProdutoExportacao> getProdutosExportacao() {
-		return produtosExportacao;
+	public static List<ProdutoExportacao> getProdutosExportacao() {
+		return _produtosExportacao;
 	}
 
-	public void setProdutosExportacao(List<ProdutoExportacao> produtosExportacao) {
-		this.produtosExportacao = produtosExportacao;
+	public static void setProdutosExportacao(List<ProdutoExportacao> produtosExportacao) {
+		_produtosExportacao = produtosExportacao;
 	}
 
-	public List<ProdutoMercadoInterno> getProdutosMercadoInterno() {
-		return produtosMercadoInterno;
+	public static List<ProdutoMercadoInterno> getProdutosMercadoInterno() {
+		return _produtosMercadoInterno;
 	}
 
-	public void setProdutosMercadoInterno(List<ProdutoMercadoInterno> produtosMercadoInterno) {
-		this.produtosMercadoInterno = produtosMercadoInterno;
+	public static void setProdutosMercadoInterno(List<ProdutoMercadoInterno> produtosMercadoInterno) {
+		_produtosMercadoInterno = produtosMercadoInterno;
 	}
 }
