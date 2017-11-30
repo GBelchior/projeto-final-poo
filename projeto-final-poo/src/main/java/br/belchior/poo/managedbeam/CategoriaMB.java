@@ -1,6 +1,8 @@
 package br.belchior.poo.managedbeam;
 
 import java.util.List;
+import java.util.TreeSet;
+
 import javax.faces.bean.ManagedBean;
 import br.belchior.poo.data.DataStorage;
 import br.belchior.poo.models.Categoria;
@@ -14,7 +16,7 @@ public class CategoriaMB {
 		return _categoria;
 	}
 	
-	public List<Categoria> getCategorias() {
+	public TreeSet<Categoria> getCategorias() {
 		return DataStorage.getCategorias();
 	}
 	

@@ -28,11 +28,15 @@
 			<p:inputText value="#{clienteMB.cliente.limite}" />
 
 		</p:panelGrid>
-		<p:commandButton value="Salvar" action="#{clienteMB.addCliente()}"
+		<p:commandButton value="Salvar" action="#{clienteMB.addCliente}"
 			style="margin-top: 2px;" update=":formCliente" />
 
 		<p:dataTable var="cli" value="#{clienteMB.clientes}" editable="true"
 			style="margin-top: 1em;">
+
+			<p:column>
+				<h:outputText value="#{cli.codigo}" />
+			</p:column>
 
 			<p:column>
 				<p:cellEditor>

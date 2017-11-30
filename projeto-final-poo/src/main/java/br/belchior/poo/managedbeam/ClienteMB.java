@@ -1,6 +1,8 @@
 package br.belchior.poo.managedbeam;
 
 import java.util.List;
+import java.util.TreeSet;
+
 import javax.faces.bean.ManagedBean;
 import br.belchior.poo.data.DataStorage;
 import br.belchior.poo.enums.Status;
@@ -15,7 +17,7 @@ public class ClienteMB {
 		return _cliente;
 	}
 	
-	public List<Cliente> getClientes() {
+	public TreeSet<Cliente> getClientes() {
 		return DataStorage.getClientes();
 	}
 	
@@ -24,6 +26,7 @@ public class ClienteMB {
 	}
 	
 	public void addCliente() {
+		_cliente.setCodigo(DataStorage.getClientes().size() == 0 ? 1 : DataStorage.getClientes().last().getCodigo() + 1);
 		DataStorage.getClientes().add(_cliente);
 		_cliente = new Cliente();
 	}
